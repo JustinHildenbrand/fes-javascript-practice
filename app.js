@@ -1,3 +1,22 @@
+// Returns true if truthy, false if not.
+function isTruthy(val) {
+  switch (val) {
+    case false:
+    case 0:
+    case -0:
+    case 0n:
+    case "":
+    case null:
+    case undefined:
+    case document.all:
+      return false;
+  }
+  if (Number.isNaN(val)) {
+    return false;
+  }
+  return true;
+}
+
 // Math using form input
 
 function math(val1, val2, op) {
