@@ -33,6 +33,14 @@ function formChangedMath() {
 }
 formChangedMath();
 
+// Square root using form input
+
+function formChangedSqrt() {
+  var value = Number(document.getElementById("sqrt_value").value);
+  document.getElementById("sqrt_out").innerHTML = Math.sqrt(value);
+}
+formChangedSqrt();
+
 // Hours to seconds using form input
 
 function hoursToSeconds(num_hours) {
