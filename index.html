@@ -8,28 +8,42 @@
   </head>
   <body>
     <h2>Math</h2>
-    <h3>Addition</h3>
+    <h3>Basic</h3>
     <form>
-      <label for="add_val_1">First Value: </label>
+      <label for="val_1">First Value: </label>
       <input
         type="number"
-        id="add_val_1"
-        name="add_val_1"
-        onkeyup="formChangedAddition()"
-        onchange="formChangedAddition()"
+        id="val_1"
+        name="val_1"
+        onkeyup="formChangedMath()"
+        onchange="formChangedMath()"
       /><br />
-      <label for="add_val_2">Second Value: </label>
+      <label for="operator">Operator</label>
+      <select
+        id="operator"
+        onkeyup="formChangedMath()"
+        onchange="formChangedMath()"
+      >
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+        <option value="^">^</option></select
+      ><br />
+      <label for="val_2">Second Value: </label>
       <input
         type="number"
-        id="add_val_2"
-        name="add_val_2"
-        onkeyup="formChangedAddition()"
-        onchange="formChangedAddition()"
-      /><br /><br />
-      <label name="sum" for="add_val_1 add_val_2"
-        ><span id="add_val_1_out"></span> + <span id="add_val_2_out"></span> =
+        id="val_2"
+        name="val_2"
+        onkeyup="formChangedMath()"
+        onchange="formChangedMath()"
+      /><br />
+      <label name="result" for="math_out"
+        ><span id="val_1_out"></span> <span id="operator_out"> </span>
+        <span id="val_2_out"></span> =
       </label>
-      <output id="sum_calc"></output>
+      <output id="math_out"></output>
     </form>
     <h3>Hours to Seconds</h3>
     <form>

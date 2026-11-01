@@ -1,20 +1,37 @@
-// Addition using form input
+// Math using form input
 
-function addValues(val1, val2) {
-  return val1 + val2;
+function math(val1, val2, op) {
+  switch (op) {
+    case "+":
+      return val1 + val2;
+    case "-":
+      return val1 - val2;
+    case "*":
+      return val1 * val2;
+    case "/":
+      return val1 / val2;
+    case "%":
+      return val1 % val2;
+    case "^":
+      return val1 ** val2;
+  }
+  return null;
 }
 
-function formChangedAddition() {
-  var add_value_1 = Number(document.getElementById("add_val_1").value);
-  var add_value_2 = Number(document.getElementById("add_val_2").value);
-  document.getElementById("add_val_1_out").innerHTML = add_value_1;
-  document.getElementById("add_val_2_out").innerHTML = add_value_2;
-  document.getElementById("sum_calc").innerHTML = addValues(
-    add_value_1,
-    add_value_2,
+function formChangedMath() {
+  var value_1 = Number(document.getElementById("val_1").value);
+  var operator = document.getElementById("operator").value;
+  var value_2 = Number(document.getElementById("val_2").value);
+  document.getElementById("val_1_out").innerHTML = value_1;
+  document.getElementById("operator_out").innerHTML = operator;
+  document.getElementById("val_2_out").innerHTML = value_2;
+  document.getElementById("math_out").innerHTML = math(
+    value_1,
+    value_2,
+    operator,
   );
 }
-formChangedAddition();
+formChangedMath();
 
 // Hours to seconds using form input
 
