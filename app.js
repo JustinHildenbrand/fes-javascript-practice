@@ -91,9 +91,13 @@ formChangedConcat();
 function reverseString(str) {
   let _rev_str = "";
   for (var i = 1; i <= str.length; ++i) {
-    _rev_str = _rev_str + str[str.length - i];
+    _rev_str += str[str.length - i];
   }
   return _rev_str;
+}
+
+function reverseString2(str) {
+  return str.split("").reverse().join("");
 }
 
 // Promises, used for API calls
