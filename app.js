@@ -47,11 +47,12 @@ function formChangedSqrt() {
 formChangedSqrt();
 
 // Math on an array.  This will get out of hand pretty fast.
+
 function mathRecursive(arr, op) {
   if (arr.length > 1) {
-    val1 = mathRecursive(arr.slice(0, arr.length - 1), op);
-    val2 = arr[arr.length - 1];
-    return math(val1, val2, op);
+    let _val1 = mathRecursive(arr.slice(0, arr.length - 1), op);
+    let _val2 = arr[arr.length - 1];
+    return math(_val1, _val2, op);
   }
   return arr[0];
 }
@@ -84,6 +85,16 @@ function formChangedConcat() {
   );
 }
 formChangedConcat();
+
+// Reverse a string
+
+function reverseString(str) {
+  let _rev_str = "";
+  for (var i = 1; i <= str.length; ++i) {
+    _rev_str = _rev_str + str[str.length - i];
+  }
+  return _rev_str;
+}
 
 // Promises, used for API calls
 
