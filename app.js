@@ -46,6 +46,19 @@ function formChangedSqrt() {
 }
 formChangedSqrt();
 
+// Math on an array.  This will get out of hand pretty fast.
+function mathRecursive(arr, op) {
+  // console.log(arr);
+  if (arr.length > 1) {
+    val1 = mathRecursive(arr.slice(0, arr.length - 1), op);
+    val2 = arr[arr.length - 1];
+    rVal = math(val1, val2, op);
+    // console.log(val1 + " " + op + " " + val2 + " = " + rVal);
+    return rVal;
+  }
+  return arr[0];
+}
+
 // Hours to seconds using form input
 
 function hoursToSeconds(num_hours) {
