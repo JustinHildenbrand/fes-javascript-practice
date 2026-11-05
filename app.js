@@ -168,3 +168,26 @@ async function emailValue() {
 }
 
 emailValue();
+
+// Pull all posts by user
+
+async function postsByUser(userId) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const result = await promise.json();
+  const posts = result.filter((element) => element.userId === userId);
+  console.log(posts);
+}
+
+// postsByUser(3);
+
+// Pull incomplete todo's.  Count is the number to pull, offset is the record to index to.
+async function firstSixTodos(count, offset = 0) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const result = await promise.json();
+  const todos = result
+    .filter((element) => element.completed === false)
+    .slice(offset, count + offset);
+  console.log(todos);
+}
+
+firstSixTodos(6);
