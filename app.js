@@ -1,7 +1,11 @@
+// Stopped at Medium Challenges video 34:02
+
 // Returns true if truthy, false if not.
 function isTruthy(val) {
   return !!val;
 }
+
+//NOTE: Can filter truthy values in array using [array].filter((elem) => {return isTruthy(elem)})
 
 // Math using form input
 
@@ -57,6 +61,26 @@ function mathRecursive(arr, op) {
   return arr[0];
 }
 
+// Use map to transform a numerical array.
+
+function arrayMap(arr, op, transVal) {
+  switch (op) {
+    case "+":
+      return arr.map((elem) => elem + transVal);
+    case "-":
+      return arr.map((elem) => elem - transVal);
+    case "*":
+      return arr.map((elem) => elem * transVal);
+    case "/":
+      return arr.map((elem) => elem / transVal);
+    case "%":
+      return arr.map((elem) => elem % transVal);
+    case "^":
+      return arr.map((elem) => elem ** transVal);
+  }
+  return null;
+}
+
 // Hours to seconds using form input
 
 function hoursToSeconds(num_hours) {
@@ -89,7 +113,7 @@ formChangedConcat();
 // Reverse a string
 
 function reverseString(str) {
-  let _rev_str = "";
+  var _rev_str = "";
   for (var i = 1; i <= str.length; ++i) {
     _rev_str += str[str.length - i];
   }
