@@ -124,6 +124,17 @@ function reverseString2(str) {
   return str.split("").reverse().join("");
 }
 
+// Show rating: for every integer show a '*', for every 0.5 show a '.'
+
+function showRating(rating) {
+  rating = Math.min(Math.max(rating, 0), 5);
+  let stars = new Array(Math.floor(rating)).fill("*");
+  if (Math.floor(2 * rating) % 2 > 0) {
+    stars.push(".");
+  }
+  return stars.join(" ");
+}
+
 // Promises, used for API calls
 
 const userName = document.querySelector(".name");
