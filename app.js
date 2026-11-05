@@ -81,6 +81,17 @@ function arrayMap(arr, op, transVal) {
   return null;
 }
 
+// Sort a numerical array the lazy built-in way.
+// If a - b < 0, keep a before b.  If a - b is positive, swap a and b.
+
+function sortAscendingNums(arr) {
+  return arr.sort((elem1, elem2) => elem1 - elem2);
+}
+
+function sortDescendingNums(arr) {
+  return arr.sort((elem1, elem2) => elem2 - elem1);
+}
+
 // Hours to seconds using form input
 
 function hoursToSeconds(num_hours) {
